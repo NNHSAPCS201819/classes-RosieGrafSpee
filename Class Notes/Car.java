@@ -1,4 +1,4 @@
-
+import org.junit.Assert;
 /**
  * This class models a car
  *
@@ -17,6 +17,7 @@ public class Car
      */
     private double fuelEff; // in units of liters per kilometer
     private double fuelTank; // in units of liters
+    private String plate; 
 
     /**
      * Constructor for objects of class Car
@@ -24,20 +25,16 @@ public class Car
     public Car()
     {
         // initialise instance variables
-        x = 0;
+        fuelEff = 1 / 30;
+        fuelTank = 0;
     }
-
-    /**
-     * An example of a method - replace this comment with your own
-     *
-     * @param  y  a sample parameter for a method
-     * @return    the sum of x and y
-     */
-    public int sampleMethod(int y)
+    
+    public Car(int fuel, int fuel_eff)
     {
-        // put your code here
-        return x + y;
+        this.fuelEff = fuel_eff;
+        this.fuelTank = fuel;
     }
+    
     /*
      * When defining a method, specify
      *  The visibility
@@ -50,6 +47,57 @@ public class Car
     /**
      * Drives the car the specified distance, in kilometers, consuming fuel
      * 
-     * @param distance the distance im km car drives
+     * @param dist the distance im km car drives
      */
+    
+    public void drive (double dist)
+    {
+        
+    }
+    
+    /**
+     * Add some fuel to the car's tank
+     * 
+     * @param amount, in liters, to add to the car's tank
+     */
+    
+    public void addFuel(double amount)
+    {
+        
+    }
+    
+    /**
+     * Returns the amout of fuel in this car's tank
+     * 
+     * @return the amount of fuels in liters, in this car's tank    
+     */
+    
+    public double getFuel()
+    {
+        return fuelTank;
+    }
+    
+    /**
+     * Sets the license plate to the specified value
+     * 
+     * @param plate the license plate for this car
+     */
+    
+    public void setPlate (String plate)
+    {
+        
+    }
+    
+    public String getPlate (String plate)
+    {
+        return this.plate;
+    }
+    
+    public void testAddFuel()
+    {
+        Car testCar = new Car(0, 50);
+        testCar.addFuel(10);
+        double amount = testCar.getFuel();
+        org.junit.Assert.assertEquals(10, amount, 1e-6);
+    }
 }
