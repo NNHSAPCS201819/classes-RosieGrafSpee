@@ -17,7 +17,7 @@ public class Car
      */
     private double fuelEff; // in units of liters per kilometer
     private double fuelTank; // in units of liters
-    private String plate; 
+    private String plate = new String(); 
 
     /**
      * Constructor for objects of class Car
@@ -52,7 +52,7 @@ public class Car
     
     public void drive (double dist)
     {
-        
+        fuelTank -= fuelEff * dist;
     }
     
     /**
@@ -63,7 +63,7 @@ public class Car
     
     public void addFuel(double amount)
     {
-        
+        fuelTank += amount;
     }
     
     /**
@@ -85,7 +85,7 @@ public class Car
     
     public void setPlate (String plate)
     {
-        
+        this.plate = plate;
     }
     
     public String getPlate (String plate)
