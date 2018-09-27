@@ -17,8 +17,8 @@ public class TargetComp extends JComponent
         System.out.print("Please input the radius of the innermost circle and the number of circles: ");
         Scanner s = new Scanner(System.in);
         
-        Strint text = s.nextLine();
-        text.
+        int x = s.nextInt();
+        int y = s.nextInt();
         
         Graphics2D g_ = (Graphics2D) g;
         Target tar = new Target(x, y);
