@@ -1,6 +1,7 @@
 import java.awt.Graphics;
 import java.awt.Graphics2D;
 import javax.swing.JComponent;
+import java.awt.Color;
 
 /**
  * Class that creates instances of the classes that comprise the cityscape and delegates drawing the
@@ -19,20 +20,22 @@ public class CityscapeComponent extends JComponent
     // define the CityscapeComponent contructor and intiailize all instance variables
     // ...
     
+    private Tree tree1;
+    tree1 = new Tree(100, 100, 40, );
     
     /**
      * This method is invoked by the Java Run-Time whenever the component needs to be redrawn.
      * It does not need to be invoked explicitly.
      *
      */
-    public void paintComponent(Graphics g)
+    public void cityComponent(Graphics g)
     {
         Graphics2D g2 = (Graphics2D) g;
         
         // invoke the draw method on each object in your Cityscape
         // ...
         
-        
+        tree1.d
     }
     
     /**
@@ -43,7 +46,7 @@ public class CityscapeComponent extends JComponent
     {
         // update the objects in the cityscape so they are animated
         // ...
-        
+        tree.move();
         
         
         // request that the Java Runtime repaints this component by invoking its paintComponent method
