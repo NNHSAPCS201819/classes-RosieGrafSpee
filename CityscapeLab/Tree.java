@@ -24,7 +24,7 @@ public class Tree
     }
 
     /**
-     * An example of a method - replace this comment with your own
+     * An example of a method - replace this comment with your own  
      *
      * @param  y  a sample parameter for a method
      * @return    the sum of x and y
@@ -34,9 +34,22 @@ public class Tree
         
         
         // put your code here
-        Rectangle trunk = new Rectangle(1.5 * size, 0.2 * size, x - 0.1 * size, y + 1.5 * size());
-        Ellipse2D.Double top = new Ellipse2D.Double(300, 300, 2, 2);
-        g_.draw(y);
-        g_.draw(x);
+        int rectX = (int)(x - 0.1 * size);
+        int rectY = (int)(y + 2.5 * size);
+        int height = (int)(2.5 * size);
+        int width = (int)(0.2 * size);
+        
+        Rectangle trunk = new Rectangle(height, width, rectX, rectY);
+        Ellipse2D.Double top = new Ellipse2D.Double((int)size, (int)size, x, y + size);
+        g_.draw(trunk);
+        g_.draw(top);
+        g_.fill(trunk);
+        g_.fill(top);
+    }
+    
+    public void move1()
+    {
+        y++;
+        x++;
     }
 }

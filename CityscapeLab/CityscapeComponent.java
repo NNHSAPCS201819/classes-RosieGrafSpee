@@ -20,8 +20,7 @@ public class CityscapeComponent extends JComponent
     // define the CityscapeComponent contructor and intiailize all instance variables
     // ...
     
-    private Tree tree1;
-    tree1 = new Tree(100, 100, 40, );
+    private Tree tree1 = new Tree(300.0, 300.0, 100.0, Color.green, Color.red);
     
     /**
      * This method is invoked by the Java Run-Time whenever the component needs to be redrawn.
@@ -35,7 +34,7 @@ public class CityscapeComponent extends JComponent
         // invoke the draw method on each object in your Cityscape
         // ...
         
-        tree1.d
+        tree1.draw(g2);
     }
     
     /**
@@ -46,7 +45,7 @@ public class CityscapeComponent extends JComponent
     {
         // update the objects in the cityscape so they are animated
         // ...
-        tree.move();
+        tree1.move1();
         
         
         // request that the Java Runtime repaints this component by invoking its paintComponent method
