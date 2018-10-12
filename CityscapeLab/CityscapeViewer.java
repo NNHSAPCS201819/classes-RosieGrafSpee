@@ -21,7 +21,7 @@ public class CityscapeViewer
         JFrame frame = new JFrame();
         
         
-        frame.setSize(800 /* x */, 600 /* y */);
+        frame.setSize(800/* x */, 600 /* y */);
         frame.setTitle("Cityscape");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         
@@ -34,11 +34,12 @@ public class CityscapeViewer
         frame.setVisible(true);
         
         // animate the cityscape
-        for( int seconds = 0; seconds < ANIMATION_TIME_IN_SECONDS; seconds++ )
+        
+        /*for( int seconds = 0; seconds < ANIMATION_TIME_IN_SECONDS; seconds++ )
         {
             component.nextFrame();
             Thread.sleep( 1000 );
-        }
+        }*/
         
     }
 

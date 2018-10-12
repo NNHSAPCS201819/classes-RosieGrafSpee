@@ -26,8 +26,8 @@ public class Target
         int radius = noRings * width;
         for (int i = 0; i < noRings; i++)
         {
-                Ellipse2D.Double x = new Ellipse2D.Double(300 - radius, 300 - radius, 2 * radius, 2 * radius);
-                g_.draw(x);
+            Ellipse2D.Double x = new Ellipse2D.Double(300 - radius, 300 - radius, 2 * radius, 2 * radius);
+            g_.draw(x);
             if (i % 2 == 0)
             {
                 g_.setColor(Color.white);

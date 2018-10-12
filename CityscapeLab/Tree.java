@@ -11,45 +11,31 @@ import java.awt.Color;
 public class Tree
 {
     // instance variables - replace the example below with your own
-    private double x, y, size;
-    private Color bark, leaves;
-
-    /**
-     * Constructor for objects of class Tree
-     */
-    public Tree(double x, double y, double size, Color bark, Color leaves)
+    int x, y, size;
+    Color bark, leaves;
+    
+    public Tree(int x, int y, int size, Color bark, Color leaves)
     {
-        // initialise instance variables
-        this.x = x; this.y = y; this.bark = bark; this.leaves = leaves; this.size = size;
+        this.x = x; this.y = y; this.size = size; this.bark = bark; this.leaves = leaves;
     }
-
-    /**
-     * An example of a method - replace this comment with your own  
-     *
-     * @param  y  a sample parameter for a method
-     * @return    the sum of x and y
-     */
+    
     public void draw(Graphics2D g_)
     {
+        Ellipse2D.Double top = new Ellipse2D.Double(x - 1.5 * size, y - 6.5 * size, 3 * size,3 * size);
+        Rectangle2D.Double bottom = new Rectangle2D.Double(x - 0.5 * size, y - 5 * size, size, 5 * size);
+
+        g_.setColor(bark);
+        g_.draw(bottom);
+        g_.fillRect((int)(x - 0.5 * size), (int)(y - 5 * size), size, 5 * size);
         
-        
-        // put your code here
-        int rectX = (int)(x - 0.1 * size);
-        int rectY = (int)(y + 2.5 * size);
-        int height = (int)(2.5 * size);
-        int width = (int)(0.2 * size);
-        
-        Rectangle trunk = new Rectangle(height, width, rectX, rectY);
-        Ellipse2D.Double top = new Ellipse2D.Double((int)size, (int)size, x, y + size);
-        g_.draw(trunk);
+        g_.setColor(leaves);
         g_.draw(top);
-        g_.fill(trunk);
-        g_.fill(top);
+        g_.fillOval((int)(x - 1.5 * size), (int)(y - 6.5 * size), 3 * size, 3 * size);
     }
     
     public void move1()
     {
-        y++;
         x++;
+        y++;
     }
 }

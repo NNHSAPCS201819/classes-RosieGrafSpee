@@ -20,27 +20,26 @@ public class CityscapeComponent extends JComponent
     // define the CityscapeComponent contructor and intiailize all instance variables
     // ...
     
-    private Tree tree1 = new Tree(300.0, 300.0, 100.0, Color.green, Color.red);
-    
     /**
      * This method is invoked by the Java Run-Time whenever the component needs to be redrawn.
      * It does not need to be invoked explicitly.
      *
      */
-    public void cityComponent(Graphics g)
+    public void paint(Graphics g)
     {
-        Graphics2D g2 = (Graphics2D) g;
+        Graphics2D g_ = (Graphics2D) g;
         
-        // invoke the draw method on each object in your Cityscape
-        // ...
-        
-        tree1.draw(g2);
+        for (int i = 0; i < 10; i++)
+        {
+            Tree tar = new Tree(500 - 50 * i, 500, 30, Color.gray, Color.green);
+            tar.draw(g_);
+        }
     }
     
     /**
      * Animate the cityscape by updating the objects such that they appear to be animated when they are next drawn.
      *
-     */
+     *"/
     public void nextFrame()
     {
         // update the objects in the cityscape so they are animated
@@ -52,5 +51,5 @@ public class CityscapeComponent extends JComponent
         //  do not explicitly invoke the paintComponent method
         repaint();
     }
-
+    */
 }
