@@ -32,14 +32,15 @@ public class CityscapeViewer
         // make the frame visible which will result in the paintComponent method being invoked on the
         //  component.
         frame.setVisible(true);
+        component.isRep = true;
         
         // animate the cityscape
         
-        /*for( int seconds = 0; seconds < ANIMATION_TIME_IN_SECONDS; seconds++ )
+        for( int seconds = 0; seconds < ANIMATION_TIME_IN_SECONDS; seconds++ )
         {
             component.nextFrame();
-            Thread.sleep( 1000 );
-        }*/
+            Thread.sleep( 210 );
+        }
         
     }
 
