@@ -24,10 +24,10 @@ public class Panel
     }
 
     /**
-     * An example of a method - replace this comment with your own
+     * Draws a Panel object when called
      *
-     * @param  y  a sample parameter for a method
-     * @return    the sum of x and y
+     * @param an abstract Graphics2D object
+     * @return nothing
      */
     public void draw(Graphics2D g_)
     {

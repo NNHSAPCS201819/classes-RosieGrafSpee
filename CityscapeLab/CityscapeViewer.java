@@ -38,7 +38,7 @@ public class CityscapeViewer
         for( int seconds = 0; seconds < no_frames; seconds++ )
         {
             component.nextFrame();
-            Thread.sleep( 210 /*time per frame, .8 seconds*/ );
+            Thread.sleep( 800 /*time per frame, .8 seconds*/ );
         }
         
     }

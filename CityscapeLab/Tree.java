@@ -14,11 +14,20 @@ public class Tree
     int x, y, size;
     Color bark, leaves;
     
+    /**
+     * Constructor for objects of class Tree
+     */
     public Tree(int x, int y, int size, Color bark, Color leaves)
     {
         this.x = x; this.y = y; this.size = size; this.bark = bark; this.leaves = leaves;
     }
     
+    /**
+     * Draws a Tree object when called
+     *
+     * @param an abstract Graphics2D object
+     * @return nothing
+     */
     public void draw(Graphics2D g_)
     {
         Ellipse2D.Double top = new Ellipse2D.Double(x - 1.5 * size, y - 6.5 * size, 3 * size,3 * size);
@@ -33,6 +42,9 @@ public class Tree
         g_.fillOval((int)(x - 1.5 * size), (int)(y - 6.5 * size), 3 * size, 3 * size);
     }
     
+    /**
+     * Default move mechanism
+     */
     public void move()
     {
         x += 5;

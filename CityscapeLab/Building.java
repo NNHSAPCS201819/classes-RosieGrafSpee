@@ -25,10 +25,10 @@ public class Building
     }
 
     /**
-     * An example of a method - replace this comment with your own
+     * Draws the Building object when called
      *
-     * @param  y  a sample parameter for a method
-     * @return    the sum of x and y
+     * @param an abstract Graphics2D object
+     * @return nothing
      */
     public void draw(Graphics2D g_)
     {
@@ -43,16 +43,29 @@ public class Building
         }
     }
     
+    /**
+     * Default move mechanism
+     */
     public void move()
     {
         rX += y / 10;
     }
     
+    /**
+     * Changes the color of the building's self
+     * @return nothing
+     * @param the new color
+     */
     public void setColor(Color A)
     {
         this.mat = A;
     }
     
+    /**
+     * Changes the color of the building's windows
+     * @return nothing
+     * @param the new color
+     */
     public void setWind(Color A)
     {
         this.win = A;

@@ -35,10 +35,10 @@ public class Meteor
     }
 
     /**
-     * An example of a method - replace this comment with your own
-     *
-     * @param  y  a sample parameter for a method
-     * @return    the sum of x and y
+     * Draws the meteor when called
+     * 
+     * @param an abstract Graphics2D object. 
+     * @return nothing
      */
     public void draw(Graphics2D g_)
     {
@@ -56,11 +56,85 @@ public class Meteor
         g_.fillOval(x - size / 2, y - size / 2, size, size);
     }
     
+    /**
+     * @return the color of the meteor's y-coordinate
+     * @param nothing
+     */
     public int getMeteorY()
     {
         return this.y;
     }
     
+    /**
+     * @return the color of the meteor's x-coordinate
+     * @param nothing
+     */
+    public int getMeteorX()
+    {
+        return this.x;
+    }
+    
+    /**
+     * @return the color of the meteor's tail
+     * @param nothing
+     */
+    public Color getMeteorTail()
+    {
+        return this.trailCol;
+    }
+    
+    /**
+     * @return the color of the meteor's self
+     * @param nothing
+     */
+    public Color getMeteorCol()
+    {
+        return this.col;
+    }
+    
+    /**
+     * Changes the x-coordinate of the meteor
+     * @return nothing
+     * @param the new x-coordinate
+     */
+    public void setMeteorX(int x)
+    {
+        this.x = x;
+    }
+    
+    /**
+     * Changes the y-coordinate of the meteor
+     * @return nothing
+     * @param the new y-coordinate
+     */
+    public void setMeteorY(int y)
+    {
+        this.y = y;
+    }
+    
+    /**
+     * Changes the color of the meteor's self
+     * @return nothing
+     * @param the new color
+     */
+    public void setMeteorCol(Color x)
+    {
+        this.col = x;
+    }
+    
+    /**
+     * Changes the color of the meteor's trail
+     * @return nothing
+     * @param the new color
+     */
+    public void setMeteorTrail(Color x)
+    {
+        this.trailCol = x;
+    }
+    
+    /**
+     * The default move mechanism.
+     */
     public void move()
     {
         Random gener = new Random();

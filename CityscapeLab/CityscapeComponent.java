@@ -18,34 +18,49 @@ public class CityscapeComponent extends JComponent
     // define the objects in your Cityscape as instance variables
     // ...
     
+    /*
+     * The idea is that there is a meteor that strikes a city and blows it apart. Yes, I'm sadistic, but whatever.
+     */
+    
+    public int frames = 0;
+    
+    /**
+     * Whether the meteor hit and exploded or not
+     */
     public boolean hasHit = false;
     
+    /**
+     * The meteor's x-coordinate, initialized to 800
+     */
     private int comX = 800;
+    
+    /**
+     * The meteor's y-coordinate, initialized to 0
+     */
     private int comY = 0;
+    
+    /**
+     * The meteor's size, initialized to 0
+     */
     private int comSize = 0;
     
+    // The color of the sky
     private Color skyCol = Color.blue;
     
     /*
      * Colors for the building and the windows, respectively. Inspired by panel
-     * housing
+     * housing, apparently with lights on.
      */
     private Color colQ = Color.white, colW = Color.yellow;
-    
-    // define the CityscapeComponent contructor and intiailize all instance variables
-    // ...
-    
-    /**
-     * This method is invoked by the Java Run-Time whenever the component needs to be redrawn.
-     * It does not need to be invoked explicitly.
-     *
-     */
     
     //defines "brown", for the trees of course.
     private Color brown = new Color(102, 51, 0);
     
     //defines the meteor
     private Meteor met = new Meteor(800, 0, 0, brown, Color.red);
+    
+    //This is an innovative solution; after all, the moon is just another meteor.
+    private Meteor moon = new Meteor(800, 0, 100, Color.white, Color.blue);
     
     //list of buildings near
     private ArrayList<Building> list1 = new ArrayList<Building>();
@@ -58,6 +73,10 @@ public class CityscapeComponent extends JComponent
     
     //list of destroyed trees, after meteor was destroyed
     private ArrayList<Stump> listStump = new ArrayList<Stump>();
+    
+    /**
+     * Initializes all the above objects
+     */
     
     public CityscapeComponent()
     {
@@ -90,12 +109,19 @@ public class CityscapeComponent extends JComponent
         }
     }
     
+    /**
+     * This method is invoked by the Java Run-Time whenever the component needs to be redrawn.
+     * It does not need to be invoked explicitly.
+     *
+     */ 
     public void paint(Graphics g)
     {   
         Graphics2D g_ = (Graphics2D) g;
         
         g_.setColor(skyCol);
         g_.fillRect(0, 0, 800, 600);
+        
+        moon.draw(g_);
         
         for (int i = 0; i < 70; i++)
         {
@@ -140,7 +166,12 @@ public class CityscapeComponent extends JComponent
         // update the objects in the cityscape so they are animated
         // ...
         
-        skyCol = skyCol.darker();
+        frames++;
+        
+        if(frames % 2 == 0)
+        {
+            skyCol = skyCol.darker();
+        }
         
         if (met.getMeteorY() >= 500 && met.getMeteorY() <= 516)
         {
@@ -180,6 +211,9 @@ public class CityscapeComponent extends JComponent
         }
         
         met.move();
+        moon.setMeteorX((int)(10 * frames) + 200);
+        moon.setMeteorY((int)((10 * frames) * (10 * frames - 380) / 400) + 100);
+        moon.setMeteorTrail(skyCol);
         
         // request that the Java Runtime repaints this component by invoking its paintComponent method
         //  do not explicitly invoke the paintComponent method
