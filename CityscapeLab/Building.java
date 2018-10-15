@@ -42,4 +42,19 @@ public class Building
             }
         }
     }
+    
+    public void move()
+    {
+        rX += y / 10;
+    }
+    
+    public void setColor(Color A)
+    {
+        this.mat = A;
+    }
+    
+    public void setWind(Color A)
+    {
+        this.win = A;
+    }
 }

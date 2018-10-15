@@ -33,9 +33,8 @@ public class Tree
         g_.fillOval((int)(x - 1.5 * size), (int)(y - 6.5 * size), 3 * size, 3 * size);
     }
     
-    public void move1()
+    public void move()
     {
-        x++;
-        y++;
+        x += 5;
     }
 }
