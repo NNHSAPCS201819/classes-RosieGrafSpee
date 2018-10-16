@@ -132,15 +132,20 @@ public class Meteor
         this.trailCol = x;
     }
     
+    public void finalize()
+    {
+        
+    }
+    
     /**
      * The default move mechanism.
      */
     public void move()
     {
         Random gener = new Random();
-        x -= gener.nextInt(11) + 7;
-        y += gener.nextInt(8) + 8;
-        size++;
+        x -= gener.nextInt(11) + 7 + size;
+        y += gener.nextInt(8) + 8 + size;
+        size += Math.sqrt(size) / 2 + 1;
         
         histX.add(0, x);
         histY.add(0, y);

@@ -167,13 +167,9 @@ public class CityscapeComponent extends JComponent
         // ...
         
         frames++;
+        skyCol = skyCol.darker();
         
-        if(frames % 2 == 0)
-        {
-            skyCol = skyCol.darker();
-        }
-        
-        if (met.getMeteorY() >= 500 && met.getMeteorY() <= 516)
+        if (met.getMeteorY() >= 500 && met.getMeteorY() < 630)
         {
             for (int i = 0; i < 10; i++)
             {

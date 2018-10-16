@@ -9,7 +9,7 @@ import javax.swing.JFrame;
 public class CityscapeViewer
 {
     // the cityscape will be animated for 60 seconds
-    static final int no_frames = 75;
+    static final int no_frames = 120;
    
     /**
      * main method for the program which creates and configures the frame for the program
@@ -31,6 +31,8 @@ public class CityscapeViewer
         
         // make the frame visible which will result in the paintComponent method being invoked on the
         //  component.
+        
+        System.gc();
         frame.setVisible(true);
         
         System.out.println("We are at war with Audrey Mendrys;");
@@ -44,7 +46,7 @@ public class CityscapeViewer
         for( int seconds = 0; seconds < no_frames; seconds++ )
         {
             component.nextFrame();
-            Thread.sleep( 800 /*time per frame, .8 seconds*/ );
+            Thread.sleep( 500 /*time per frame, .5 seconds*/ );
         }
         
     }
