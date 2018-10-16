@@ -3,7 +3,7 @@ import javax.swing.JFrame;
 /**
  * Class that contains the main method for the program and creates the frame containing the component.
  * 
- * @author @gcschmit
+ * @author @Admiral Leberecht Maass
  * @version 18 July 2014
  */
 public class CityscapeViewer
@@ -32,6 +32,12 @@ public class CityscapeViewer
         // make the frame visible which will result in the paintComponent method being invoked on the
         //  component.
         frame.setVisible(true);
+        
+        System.out.println("We are at war with Audrey Mendrys;");
+        System.out.println("Be prepared.");
+        
+        System.out.println("");
+        System.out.println("Heir dir im Siegerkranz!!!");
         
         // animate the cityscape
         
